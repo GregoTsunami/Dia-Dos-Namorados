@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o meu amor,</title>
+    <style>
+
+        body{
+            background-color: red;
+        }
+
+        .fundo{
+            margin: auto;
+            width: 80vw;
+            height: 100vh;
+            background-color: white;
+            border-radius: 5%;
+            text-align: center;
+            padding-top:10vh;
+            padding-bottom: 10vh;
+
+        }
+
+        .fundo img{
+            max-width: 100%;
+            border-radius: 5%;
+            margin-top: 5vh;
+        }
+
+        #sim{
+            height: 5vh;
+            width: 10vw;
+            background-color: darkred;
+            border-radius: 1vh;
+            border-color: white;
+            color:white;
+            margin-right:20vw;
+        }
+
+        #nao{
+            position: absolute;
+            height: 5vh;
+            width: 10vw;
+            background-color: darkred;
+            border-radius: 1vh;
+            border-color: white;
+            color:white;
+            margin-left:-10vw;
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <div class="fundo">
+        <h1>
+            Você aceita namorar comigo?
+        </h1>
+        <img style="margin-top: 5vh;" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGl2b2puajFkaW9odXExMmY3Z2Q2anNxNWIwM3JmNTN5NWhkOWp5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PGSMYXweBYubh8NWoA/giphy.gif">
+        <h2> 
+            Se tu clicar no não tu vai ver o que eu faço...
+        </h2>
+        <button id="sim" onclick="nextpage()">Sim!</button>
+        <button id="nao" onmouseover="fuja()">Não!</button>
+    </div>
+
+
+
+
+    <script>
+        function fuja(){
+            var btn_nao = document.getElementById("nao")
+            var width_window = window.innerWidth;
+            var height_window = window.innerHeight;
+
+            var max_X = width_window - btn_nao.offsetWidth;
+            var max_Y = height_window - btn_nao.offsetHeight;
+
+            var rand_X = Math.floor(Math.random()* max_X);
+            var rand_y = Math.floor(Math.random() * max_Y);
+
+            btn_nao.style.left = rand_X + "px";
+            btn_nao.style.top = rand_y + "px";
+
+        }
+        function nextpage(){
+            window.location.href = "momentos.html";
+        }
+
+    </script>
+</body>
+</html>
